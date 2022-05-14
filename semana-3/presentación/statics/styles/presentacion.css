@@ -1,0 +1,148 @@
+/*=FONTS
+-------------------------------------------------------------------------------------------------------------------*/
+@font-face {
+    font-family:"quetry";
+    src: url(../fonts/Quetry\ Serif\ Demo.otf);
+}
+@font-face {
+    font-family:"silian" ;
+    src: url(../fonts/SilianRail_PERSONAL_USE_ONLY.otf);
+}
+@font-face {
+    font-family:"bitter" ;
+    src: url(../fonts/Bitter-VariableFont_wght.ttf);
+}
+/*=STRUCTURE
+-------------------------------------------------------------------------------------------------------------------*/
+body {
+    margin: 0;
+    border: 0;
+    padding:0;
+    background-color: #f7d5df;
+    box-sizing: content-box;
+}
+/*=HEADER
+-------------------------------------------------------------------------------------------------------------------*/
+header{
+    position:fixed;
+    background-color: rgb(223, 202, 202);
+    width: 75%;
+    z-index: 3;
+}
+/*=imagen
+-------------------------------------------------------------------------------------------------------------------*/
+img{
+    margin: 10px;
+    border-style: dotted;
+    BORDER-WIDTH: THICK;
+    position: relative;
+    top: 100px;
+    left: 150px;
+}
+/*=contenido
+-------------------------------------------------------------------------------------------------------------------*/
+p.presentacion{
+    overflow:auto;
+    height: 140px;
+    width:250px;
+    position: absolute;
+    top: 95px;
+    left: 605px;
+}
+
+p.team{
+    height: 65px;
+    width: 230px;
+    padding: 20px;
+    position: absolute;
+    top: 255px;
+    left: 590px;
+    background-color: rgb(197, 218, 235);
+    border-radius: 45%;
+}
+
+/*=articles
+-------------------------------------------------------------------------------------------------------------------*/
+article{
+    height: 100px;
+    width: 200px;
+   
+    background-color: rgba(190, 224, 190, 0.89);
+    padding: 20px;
+    margin: 0;
+    border-radius: 20px;
+
+    font-family: "bitter", "verdana", "sans-serif";
+    color:rgb(50, 19, 80);;
+    font-size: smaller
+}
+.crush{
+    position: relative;
+    top: 116px;
+    left: 50px;
+}
+
+.peliculas{
+    position: absolute;
+    top: 420px;
+    left: 330px;
+}
+
+.cantantes{
+    position: absolute;
+    top: 420px;
+    left: 615px;
+}
+
+/*=aside
+-------------------------------------------------------------------------------------------------------------------*/
+aside{
+    width:25%;
+    position: absolute;
+    right:0%;
+    top:0%;
+    background-color: #ecebb0;
+    z-index: 4;
+    height: 100%;
+    padding-left: 25px;
+    padding-top: 20px;
+    padding-right: 0;
+}
+aside *{
+    padding: 20px;
+}
+
+/*=pseudo
+-------------------------------------------------------------------------------------------------------------------*/
+a:link{
+    color:rgb(36, 87, 133);
+}
+a:visited{
+    color:rgb(122, 36, 133);
+}
+
+/*=globales
+-------------------------------------------------------------------------------------------------------------------*/
+#contenido{
+    width: 70%;
+}h1{
+    font-family: "silian", "georgia", "serif";
+    color:rgb(50, 19, 80);
+}
+h3{
+    font-family: "quetry", "georgia", "serif";
+    margin: 0;
+    color: rgb(207, 100, 0);
+}
+p{
+    font-family: "bitter", "verdana", "serif";
+    font-size: small;
+    color: black;
+}
+li{
+    font-family: "bitter", "verdana", "sans-serif";
+    color:rgb(50, 19, 80);;
+    font-size: smaller
+}
+
+
