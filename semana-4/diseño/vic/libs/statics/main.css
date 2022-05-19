@@ -1,0 +1,27 @@
+body{
+    background-color: gainsboro;
+}
+nav{
+    background-color: crimson;
+}
+#logo{
+    position: relative;
+    top: 5%;
+}
+#1{
+    color: #ffffff;
+}
+#cartita{
+    position: relative;
+    top: 5%;
+    background-image: url("../../img/FondoComic.png");
+    align-items: center;
+}
+#lg{
+    background-color: lightgray;
+    font-weight: bolder;
+}
+#boton{
+    background-color: #c4c4c4;
+    color:black; 
+}

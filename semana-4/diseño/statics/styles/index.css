@@ -1,0 +1,21 @@
+#inline{
+    display: inline;
+    background-color: aqua;
+}
+
+#block{
+    display: block;
+    background-color: blueviolet;
+}
+
+#none {
+    display: none;
+    background-color:coral;
+}
+
+#inline-block{
+    display: inline-block;
+    background-color: darkgreen;
+    width: 200px;
+    height: 100px;
+}

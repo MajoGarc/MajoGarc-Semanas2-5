@@ -1,0 +1,23 @@
+body{
+    background-color: antiquewhite;
+}
+
+#padre{
+    background-color: #00ff00;
+    width: 200px;
+    height: 200px;
+}
+
+#hijo{
+    background-color: #ff0000;
+    width: 100px;
+    height: 100px;
+}
+
+/* #tarjeta{
+    background-color: gray;
+}
+#sub{
+    background-color: red;
+    border-radius: 10%;
+} */

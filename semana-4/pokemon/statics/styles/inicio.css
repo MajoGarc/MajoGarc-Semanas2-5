@@ -1,0 +1,15 @@
+body{
+    background-color: rgb(255, 30, 0);
+}
+#buscar{
+    text-align: center;
+}
+
+#agregar{
+    background-color: green;
+    border: black;
+    border-radius: 10px;
+}
+#nuevo_pok{
+    background-color: white;
+}

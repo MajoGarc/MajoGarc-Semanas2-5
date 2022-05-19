@@ -13,15 +13,15 @@
                 <button>Cerrar Sesión</button>
             </form>";
 
-    }else if($_SESION["nombre"]){
+    }else if($_SESSION["nombre"]){
         echo "Estás iniciando seson como:".$_SESSION["nombre"];
         
         echo"
-            <form action='./cerrar sesion.php' method='post' target='_self'>
+            <form action='./dynamics/cerrar sesion.php' method='post' target='_self'>
                 <button>Cerrar Sesión</button>
             </form>";
     }else{
-        header("location ../form_sesion.php")
+        header("location ../form_sesion.php");
     }
     echo "jiji ya m infiltré";
 ?>

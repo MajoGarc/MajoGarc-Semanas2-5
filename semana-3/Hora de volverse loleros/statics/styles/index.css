@@ -1,0 +1,16 @@
+body{
+    background-image: url(https://phantom-marca.unidadeditorial.es/abfd01e815b28d5553ed7ba9fa2e9647/crop/0x0/1980x1112/resize/1320/f/jpg/assets/multimedia/imagenes/2022/03/16/16474267987028.jpg);
+    background-size: cover;
+    color:aliceblue;
+}
+h1{
+    background-color: rgba(48, 75, 196, 0.623);
+    width:600px;
+    margin: 0;
+}
+p{
+    background-color: rgba(96, 101, 124, 0.623);
+    width:550px;
+    font-size: medium;
+    margin: 0;
+}
