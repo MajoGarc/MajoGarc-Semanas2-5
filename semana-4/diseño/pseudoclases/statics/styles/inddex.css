@@ -1,0 +1,9 @@
+/* p:first-child{
+    background-color: red;
+}
+
+#pseudo-elementos::after{
+    content:"estoy antes";
+    background-color: beige;
+} */
+
