@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./statics/styles/main.css">
+
+        <title>Canal 2 | Majo</title>
+    </head>
+    <body>
+        <div id="contenido">
+            <h1>Generador de Estrellitas</h1>
+            <canvas id="mi-canvas" width="600" height="600">
+
+            </canvas>
+
+            <label for="picos" class="labels">
+                Picos:
+                <input type="number" id="picos" min="4" max="30" value="4">
+            </label>
+
+            <label for="color" class="labels">
+                Color de la estrella:
+                <input type="color" id="color">
+            </label>
+            
+            <label for="picudez" class="labels">
+                Picudez
+                <input type="range" min="1" max="11" id="picudez" value="6">
+            </label>
+            
+            <label for="rellenar" class="labels">
+                <input type="checkbox" id="rellenar">
+                Rellenar Estrellita
+            </label>
+
+        </div>    
+
+        <script src="./dynamics/js/index.js"></script>
+    </body>
+</html>
