@@ -6,15 +6,19 @@ const color = document.getElementById("color");
 const picudez = document.getElementById("picudez");
 const rellenar = document.getElementById("rellenar");
 
-ctx.beginPath();
+ctx.beginPath(); 
 
 const longitudLinea = 45;
-const xInicial = 600/2;
+const xInicial = 600 / 2;
 const yInicial = 0;
 
 let puntosTotal = (picos.value * 2)
 let gradosPicos = (360 / puntosTotal);
-let radianes = (gradosPicos * Math.PI) / 180;
+let gradosF = gradosPicos + (gradosPicos / 3);
+let gradosD = gradosPicos - (gradosPicos / 3);
+let radianesD = (gradosD * Math.PI) / 180;
+let radianesF = (gradosF * Math.PI) / 180;
+let angulo= radianesF;
 let xNueva = xInicial;
 let yNueva = yInicial;
 
@@ -23,27 +27,31 @@ let puntosD = picos.value;
 
 ctx.moveTo(xInicial, yInicial);
 
-for(let i=0; i<puntosTotal; i++)
+
+for(let i=1; i<picos.value; i++)
 {
-    const despX =longitudLinea * Math.cos(radianes);
-    const despY =longitudLinea * Math.sin(radianes);
-    xNueva += despX;
-    yNueva += despY;
-    ctx.lineTo(xNueva, yNueva)
-    
+    const despX = longitudLinea * Math.cos(angulo);
+    const despY = longitudLinea * Math.sin(angulo);
+        xNueva += despX;
+        yNueva += despY;
+        angulo =+ radianesD;
+        ctx.lineTo(xNueva, yNueva)
+        xNueva += despX;
+        yNueva += despY;
+        angulo =+ radianesF;
+        ctx.lineTo(xNueva, yNueva)
     console.log ("1");
 }
-
-rellenar.addEventListener("change", ()=> {
-    let counter = 1;
-    if(counter% 2 == 0){
-        ctx.stroke();
-    }else{
-        ctx.fill();
-    }
-});
-
+ctx.lineTo (xInicial, yInicial);
 ctx.stroke();
 
+// rellenar.addEventListener("change", ()=> {
+//     let counter = 1;
+//     if(counter % 2 == 0){
+//         ctx.stroke();
+//     }else{
+//         ctx.fill();
+//     }
+// });
 
 ctx.closePath();

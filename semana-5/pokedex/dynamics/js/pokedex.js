@@ -79,9 +79,28 @@ window.addEventListener("load", ()=>{
             divDatos.innerHTML+="<div class='dato'><strong>Altura</strong>"+datosJSON.datos.altura+"</div>";
             divDatos.innerHTML+="<div class='dato'><strong>Peso</strong>"+datosJSON.datos.peso+"</div>";
             divDatos.innerHTML+="<div class='dato'><strong>Tipo</strong>"+datosJSON.datos.tipo+"</div>";
+            divDatos.innerHTML+= "<div"
             divDatos.style.display = "flex";
           }
         });
     }
   });
+
+  divDatos.addEventListener ("click",(evento)=> {
+    if(evento.target.id == "btn-eliminar"){
+      let datosForm = FormData();
+      datosForm.append("id", evento.target.dataset.id);
+      fetch("/dynamics/php/borrar_pokemon.php",{
+        method: "POST",
+        body: datosForm,
+      }).then((response)=>{
+        return response.json();
+      }).then((datosJSON)=>{
+        if(datosJSON.ok == true)
+          alert("Se eliminó el pokemon");
+        else
+          alert("No se puedo eliminar el pokemon");
+      })
+    }
+  })
 });
