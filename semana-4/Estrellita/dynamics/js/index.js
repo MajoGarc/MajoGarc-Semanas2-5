@@ -2,20 +2,19 @@ const canvas = document.getElementById ("mi-canvas");
 const ctx = canvas.getContext("2d");
 
 const picos = document.getElementById("picos");
-let color = document.getElementById("color");
+const color = document.getElementById("color");
 const picudez = document.getElementById("picudez");
 const rellenar = document.getElementById("rellenar");
 
 ctx.beginPath();
 
-const longitudLinea1 = 45;
-const longitudLinea2 = 35;
+const longitudLinea = 45;
 const xInicial = 600/2;
 const yInicial = 0;
 
-// let puntosTotal = (picos.value * 2)
-let gradosPuntosF = (360 / picos.value);
-let radianesF = (gradosPuntosF * Math.PI) / 360;
+let puntosTotal = (picos.value * 2)
+let gradosPicos = (360 / puntosTotal);
+let radianes = (gradosPicos * Math.PI) / 180;
 let xNueva = xInicial;
 let yNueva = yInicial;
 
@@ -24,23 +23,16 @@ let puntosD = picos.value;
 
 ctx.moveTo(xInicial, yInicial);
 
-for(let i=0; i<picos.value; i++)
+for(let i=0; i<puntosTotal; i++)
 {
-    const despX =(longitudLinea1 * Math.cos(radianesF));
-    const despY =longitudLinea1 * Math.sin(radianesF);
+    const despX =longitudLinea * Math.cos(radianes);
+    const despY =longitudLinea * Math.sin(radianes);
     xNueva += despX;
     yNueva += despY;
-    ctx.strokeStyle = color.value;
     ctx.lineTo(xNueva, yNueva)
-    const despXx =longitudLinea2 * Math.cos(radianesF);
-    const despYy =longitudLinea2 * Math.sin(radianesF);
-    xNueva += despXx;
-    yNueva += despYy;
-    ctx.strokeStyle = color.value;
-    ctx.lineTo(xNueva, yNueva)
+    
     console.log ("1");
 }
-
 
 rellenar.addEventListener("change", ()=> {
     let counter = 1;
@@ -50,5 +42,8 @@ rellenar.addEventListener("change", ()=> {
         ctx.fill();
     }
 });
+
+ctx.stroke();
+
 
 ctx.closePath();
