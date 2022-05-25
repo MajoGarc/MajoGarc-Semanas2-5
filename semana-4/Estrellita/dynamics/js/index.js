@@ -40,20 +40,15 @@ for(let i=0; i<picos.value; i++)
     ctx.lineTo(xNueva, yNueva)
     console.log ("1");
 }
+
+
 rellenar.addEventListener("change", ()=> {
-    let counter=1;
+    let counter = 1;
     if(counter% 2 == 0){
         ctx.stroke();
     }else{
         ctx.fill();
     }
-})
-    if(rellenar.value == true){
-        ctx.fillStyle();
-    }else{
-        ctx.stroke();
-    }
-
-
+});
 
 ctx.closePath();
