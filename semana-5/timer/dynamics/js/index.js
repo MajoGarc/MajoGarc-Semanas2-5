@@ -1,18 +1,13 @@
-/*****MODAL*********/
-// const myModal = document.getElementById('exampleModal')
-// const myInput = document.getElementById('myInput')
+const modal = document.getElementById('exampleModal')
+const timer = document.getElementById('timer')
 
-// exampleModal.addEventListener('shown.bs.modal', () => {
-//     myInput.focus()
-// })
-
-/* GENERAL */
+modal.addEventListener('shown.bs.modal', () => {
+    timer.focus()
+});
 const segundos = document.getElementById("segundos");
-const minutos = document.getElementById("minutos");
-//const horas = document.getElementById("inicio");
-const tiempo = document.getElementById("contador");
-const inicio = document.getElementById("iniciar");
 const fin = document.getElementById("detener");
+const alarma = new Audio("./statics/media/audio/alarma.wav");
+
 let min = minutos.value;
 let seg= segundos.value;
 
@@ -40,7 +35,8 @@ iniciar.addEventListener("click", ()=>{
             seg--; 
         }, 1000);
     }
-    learInterval(counter);
+    clearInterval(counter);
+    alarma.play();
 });
        
 fin.addEventListener("click", ()=> {
