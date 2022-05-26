@@ -1,44 +1,58 @@
-const modal = document.getElementById('exampleModal')
-const timer = document.getElementById('timer')
 
-modal.addEventListener('shown.bs.modal', () => {
-    timer.focus()
-});
-const segundos = document.getElementById("segundos");
 const fin = document.getElementById("detener");
 const alarma = new Audio("./statics/media/audio/alarma.wav");
 
-let min = minutos.value;
-let seg= segundos.value;
 
-if( min >= 0 || min == ''){
-    min = 0;
-}else if( min >= 60 ){
-    min = 59;
-}
+function setCronometro(){
+    var segundos = document.getElementById("segundos");
+    var minutos = document.getElementById("minutos");
 
-if( seg >= 0 || seg == ''){
-    seg = 0;
-} else if( seg >= 60){
-    seg = 59;
-}
+    var min = minutos.value;
+    var seg= segundos.value;
 
-let minSeg = min * 60;
-let segTotal = minSeg + seg;
+    console.log(min);
+    console.log(seg);
 
-contador.innerHTML += min + ' : ' + seg; 
-
-iniciar.addEventListener("click", ()=>{
-    for(let i = 0; i < minSeg; i ++){
-        let counter = setInterval(()=>{
-            contador.innerHTML += min + ' : ' + seg;
-            seg--; 
-        }, 1000);
+    if( min <= 0 || min == ''){
+        min = 0;
+    }else if( min >= 60 ){
+        min = 59;
     }
-    clearInterval(counter);
-    alarma.play();
-});
-       
-fin.addEventListener("click", ()=> {
-    clearInterval(counter);
-});
+
+    if( seg <= 0 || seg == ''){
+        seg = 0;
+    } else if( seg >= 60){
+        seg = 59;
+    }
+
+    console.log(min);
+    console.log(seg);
+    
+    var minSeg = min * 60;
+    var segTotal = seg + minSeg;
+
+    let counter;
+
+    console.log(minSeg);
+    console.log(segTotal);
+
+    contador.innerHTML += min + ' : ' + seg; 
+
+    iniciar.addEventListener("click", ()=>{
+        for(let i = segTotal - 1; i < segTotal; i ++){
+            counter = setInterval(()=>{
+                contador.innerHTML = min + ' : ' + seg;
+                seg--; 
+            }, 1000);
+        }
+        // clearInterval();
+        alarma.play();
+    });
+        
+    fin.addEventListener("click", ()=> {
+        clearInterval(counter);
+        alarma.load()
+    });
+
+}
+    
