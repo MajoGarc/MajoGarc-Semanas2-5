@@ -30,6 +30,8 @@ function setCronometro(){
     
     var minSeg = min * 60;
     var segTotal = seg + minSeg;
+    var milSeg = segTotal * 1000;
+    
 
     let counter;
 
@@ -38,19 +40,27 @@ function setCronometro(){
 
     contador.innerHTML += min + ' : ' + seg; 
 
+    //let i = segTotal
+    
     iniciar.addEventListener("click", ()=>{
-        for(let i = segTotal - 1; i < segTotal; i ++){
-            counter = setInterval(()=>{
-                contador.innerHTML = min + ' : ' + seg;
-                seg--; 
-            }, 1000);
-        }
-        // clearInterval();
+        counter = setInterval(()=>{
+            contador.innerHTML = min + ' : ' + seg;
+            seg--; 
+        }, 1000);
         alarma.play();
+        let terminar = setTimeout(()=>{
+            clearInterval(counter);
+            console.log("setto")
+        }, milSeg );
+        // 
+        
     });
         
     fin.addEventListener("click", ()=> {
         clearInterval(counter);
+        min = 00;
+        seg = 00;
+        contador.innerHTML = min + ' : ' + seg;
         alarma.load()
     });
 
