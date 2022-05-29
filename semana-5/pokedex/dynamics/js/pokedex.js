@@ -16,7 +16,7 @@ window.addEventListener("load", ()=>{
     divAgregar.style.display = "none";
     evento.preventDefault();
     let datosForm = new FormData(formNuevo);
-    fetch("../php/crear_pokemon.php", {
+    fetch("dynamics/php/crear_pokemon.php", {
       method: "POST",
       body: datosForm, 
     }).then((response)=>{
@@ -79,7 +79,7 @@ window.addEventListener("load", ()=>{
             divDatos.innerHTML+="<div class='dato'><strong>Altura</strong>"+datosJSON.datos.altura+"</div>";
             divDatos.innerHTML+="<div class='dato'><strong>Peso</strong>"+datosJSON.datos.peso+"</div>";
             divDatos.innerHTML+="<div class='dato'><strong>Tipo</strong>"+datosJSON.datos.tipo+"</div>";
-            divDatos.innerHTML+= "<div"
+            divDatos.innerHTML+="<button data-id="+id+" id='btn-eliminar'>Eliminar pokemon</button>";
             divDatos.style.display = "flex";
           }
         });
@@ -88,19 +88,23 @@ window.addEventListener("load", ()=>{
 
   divDatos.addEventListener ("click",(evento)=> {
     if(evento.target.id == "btn-eliminar"){
-      let datosForm = FormData();
+      let datosForm = new FormData();
       datosForm.append("id", evento.target.dataset.id);
-      fetch("/dynamics/php/borrar_pokemon.php",{
+      fetch("dynamics/php/borrar_pokemon.php",{
         method: "POST",
         body: datosForm,
       }).then((response)=>{
         return response.json();
       }).then((datosJSON)=>{
-        if(datosJSON.ok == true)
+        if(datosJSON.ok == true){
           alert("Se eliminó el pokemon");
+          window.location.reload();
+        }
         else
+        {
           alert("No se puedo eliminar el pokemon");
-      })
+        }
+      });
     }
-  })
+  });
 });

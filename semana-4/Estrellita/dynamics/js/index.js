@@ -28,22 +28,22 @@ let puntosD = picos.value;
 ctx.moveTo(xInicial, yInicial);
 
 
-for(let i=1; i<picos.value; i++)
-{
-    const despX = longitudLinea * Math.cos(angulo);
-    const despY = longitudLinea * Math.sin(angulo);
-        xNueva += despX;
-        yNueva += despY;
-        angulo =+ radianesD;
-        ctx.lineTo(xNueva, yNueva)
-        xNueva += despX;
-        yNueva += despY;
-        angulo =+ radianesF;
-        ctx.lineTo(xNueva, yNueva)
-    console.log ("1");
-}
-ctx.lineTo (xInicial, yInicial);
-ctx.stroke();
+    for(let i=1; i<picos.value; i++)
+    {
+        const despX = longitudLinea * Math.cos(angulo);
+        const despY = longitudLinea * Math.sin(angulo);
+            xNueva += despX;
+            yNueva += despY;
+            angulo =+ radianesD;
+            ctx.lineTo(xNueva, yNueva)
+            xNueva += despX;
+            yNueva += despY;
+            angulo =+ radianesF;
+            ctx.lineTo(xNueva, yNueva)
+        console.log ("1");
+    }
+    ctx.lineTo (xInicial, yInicial);
+    ctx.stroke();
 
 // rellenar.addEventListener("change", ()=> {
 //     let counter = 1;
